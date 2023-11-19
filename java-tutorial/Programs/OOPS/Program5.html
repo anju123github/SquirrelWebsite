@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Squirrel-Codes</title>
+    <link rel="stylesheet" href="../../../index.css">
+    <link rel="shortcut icon" href="../../../images/logo-dark.svg" type="image/x-icon">
+</head>
+
+<body>
+
+    <header class="sticky">
+        <a href="index.html" class="webname">
+            <img src="../../../images/logo-dark.svg" alt="">
+            Squirrel<span class="primary-color">Codes</span>
+        </a>
+        <nav>
+            <a href="../../../index.html">Home</a>
+            <a href="../dbms-tutorial/dbms1.html">DBMS</a>
+            <a href="../../plsql-tutorial/plsql1.html" class="active">PL/SQL</a>
+            <a href="../java.html">Java</a>
+            <a href="../../../about.html">About</a>
+        </nav>
+    </header>
+
+    <h2 class="center tutorial">Java Tutorial</h2>
+    <hr>
+    <div class="content-box">
+        <div class="sidebar">
+            <a class="primary-color">Programs</a>
+            <a href="../../../Programs/Program1.html" class="sidelinks sideactive">Program 1</a>
+            <a href="./Quesrions/Array2D.html" class="sidelinks">Program 2</a>
+            <a href="./Quesrions/Applets.html" class="sidelinks">Program 3</a>
+            <a href="./Quesrions/Data-Conversion.html" class="sidelinks">Program 4</a>
+            <a href="./Quesrions/Delegation-event-model.html" class="sidelinks">Delegation Event Model</a>
+            <a href="./Quesrions/Exception-Handling.html" class="sidelinks">Exception handling</a>
+            <a href="./Quesrions/Function.html" class="sidelinks">Functions</a>
+            <a href="./Quesrions/AWT.html" class="sidelinks">AWT</a>
+            <a href="./Quesrions/Inheritance.html" class="sidelinks">Inheritance</a>
+            <a href="./Quesrions/Input-Output.html" class="sidelinks">Input/Output</a>
+            <a href="./Quesrions/Interfaces.html" class="sidelinks">Interface</a>
+            <a href="./Quesrions/JDBC.html" class="sidelinks">JDBC</a>
+            <a href="./Quesrions/Multithreading.html" class="sidelinks">Multithreading</a>
+            <a href="./Quesrions/OOPs.html" class="sidelinks">OOPs</a>
+            <a href="./Quesrions/Packages.html" class="sidelinks">Packages</a>
+            <a href="./Quesrions/Array1D.html" class="sidelinks">1D Arrays</a>
+            <a href="./Quesrions/String.html" class="sidelinks">Strings</a>
+        </div>
+        <div class="content">
+            <!-- topic name -->
+            <h3 class="main">OOPs</h3>
+
+            <!-- Programs list -->
+            <p>5. Write a Java program to create a class called "Book" with attributes for title, author, and ISBN, and methods to add and remove books from a collection</p>
+            <h3>Code</h3>
+            <pre class="code"><code class="language-java">
+                
+import java.util.ArrayList;
+
+class Book {
+    private String title;
+    private String author;
+    private String ISBN;
+
+    // Constructor to initialize title, author, and ISBN
+    public Book(String title, String author, String ISBN) {
+        this.title = title;
+        this.author = author;
+        this.ISBN = ISBN;
+    }
+
+    // Getter methods
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+}
+
+class BookCollection {
+    private ArrayList books;
+
+    // Constructor to initialize the collection
+    public BookCollection() {
+        this.books = new ArrayList<>();
+    }
+
+    // Method to add a book to the collection
+    public void addBook(Book book) {
+        books.add(book);
+        System.out.println("Book added to the collection: " + book.getTitle());
+    }
+
+    // Method to remove a book from the collection
+    public void removeBook(Book book) {
+        if (books.remove(book)) {
+            System.out.println("Book removed from the collection: " + book.getTitle());
+        } else {
+            System.out.println("Book not found in the collection: " + book.getTitle());
+        }
+    }
+
+    // Method to display the books in the collection
+    public void displayBooks() {
+        if (books.isEmpty()) {
+            System.out.println("The collection is empty.");
+        } else {
+            System.out.println("Books in the collection:");
+            for (Book book : books) {
+                System.out.println("Title: " + book.getTitle() + ", Author: " + book.getAuthor() + ", ISBN: " + book.getISBN());
+            }
+        }
+    }
+}
+
+public class BookExample {
+    public static void main(String[] args) {
+        // Create an instance of BookCollection
+        BookCollection myLibrary = new BookCollection();
+
+        // Create instances of Book
+        Book book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", "978-3-16-148410-0");
+        Book book2 = new Book("To Kill a Mockingbird", "Harper Lee", "978-0-06-112008-4");
+
+        // Add books to the collection
+        myLibrary.addBook(book1);
+        myLibrary.addBook(book2);
+
+        // Display books in the collection
+        myLibrary.displayBooks();
+
+        // Remove a book from the collection
+        myLibrary.removeBook(book1);
+
+        // Display updated collection
+        myLibrary.displayBooks();
+    }
+}
+</code></pre>
+<h3>Output</h3>
+<pre class="code" style="padding: 2%;">
+Book added to the collection: The Great Gatsby
+Book added to the collection: To Kill a Mockingbird
+Books in the collection:
+Title: The Great Gatsby, Author: F. Scott Fitzgerald, ISBN: 978-3-16-148410-0
+Title: To Kill a Mockingbird, Author: Harper Lee, ISBN: 978-0-06-112008-4
+Book removed from the collection: The Great Gatsby
+Books in the collection:
+Title: To Kill a Mockingbird, Author: Harper Lee, ISBN: 978-0-06-112008-4
+
+</pre>
+            <!-- previous next buttons -->
+            <!-- <div class="toggle-page-btns">
+                <a href="plsql2.html" class="button">Next &rarr;</a>
+            </div> -->
+        </div>
+    </div>
+    <footer>
+        Copyright &copy; 2023 Squirrel<span class="primary-color">Codes</span>
+    </footer>
+</body>
+
+</html>

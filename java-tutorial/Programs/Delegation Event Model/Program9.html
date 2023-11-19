@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Squirrel-Codes</title>
+    <link rel="stylesheet" href="../../../index.css">
+    <link rel="shortcut icon" href="../../../images/logo-dark.svg" type="image/x-icon">
+</head>
+
+<body>
+
+    <header class="sticky">
+        <a href="index.html" class="webname">
+            <img src="../../../images/logo-dark.svg" alt="">
+            Squirrel<span class="primary-color">Codes</span>
+        </a>
+        <nav>
+            <a href="../../../index.html">Home</a>
+            <a href="../dbms-tutorial/dbms1.html">DBMS</a>
+            <a href="../../plsql-tutorial/plsql1.html" class="active">PL/SQL</a>
+            <a href="../java.html">Java</a>
+            <a href="../../../about.html">About</a>
+        </nav>
+    </header>
+
+    <h2 class="center tutorial">Java Tutorial</h2>
+    <hr>
+    <div class="content-box">
+        <div class="sidebar">
+            <a class="primary-color">Programs</a>
+            <a href="../../../Programs/Program1.html" class="sidelinks sideactive">Program 1</a>
+            <a href="./Quesrions/Array2D.html" class="sidelinks">Program 2</a>
+            <a href="./Quesrions/Applets.html" class="sidelinks">Program 3</a>
+            <a href="./Quesrions/Data-Conversion.html" class="sidelinks">Program 4</a>
+            <a href="./Quesrions/Delegation-event-model.html" class="sidelinks">Delegation Event Model</a>
+            <a href="./Quesrions/Exception-Handling.html" class="sidelinks">Exception handling</a>
+            <a href="./Quesrions/Function.html" class="sidelinks">Functions</a>
+            <a href="./Quesrions/AWT.html" class="sidelinks">AWT</a>
+            <a href="./Quesrions/Inheritance.html" class="sidelinks">Inheritance</a>
+            <a href="./Quesrions/Input-Output.html" class="sidelinks">Input/Output</a>
+            <a href="./Quesrions/Interfaces.html" class="sidelinks">Interface</a>
+            <a href="./Quesrions/JDBC.html" class="sidelinks">JDBC</a>
+            <a href="./Quesrions/Multithreading.html" class="sidelinks">Multithreading</a>
+            <a href="./Quesrions/OOPs.html" class="sidelinks">OOPs</a>
+            <a href="./Quesrions/Packages.html" class="sidelinks">Packages</a>
+            <a href="./Quesrions/Array1D.html" class="sidelinks">1D Arrays</a>
+            <a href="./Quesrions/String.html" class="sidelinks">Strings</a>
+        </div>
+        <div class="content">
+            <!-- topic name -->
+            <h3 class="main">Delegation-event-model</h3>
+
+            <!-- Programs list -->
+            <p>9. Java Program to Create and Switch between Frames using Buttons</p>
+            <h3>Code</h3>
+            <pre class="code"><code class="language-java">
+                
+import java.awt.*;
+import java.awt.event.*;
+
+class pro9 extends Frame implements ActionListener {
+    Frame frame1, frame2;
+    Button switchButton1, switchButton2;
+
+    pro9() {
+        frame1 = new Frame("Frame 1");
+        frame2 = new Frame("Frame 2");
+        switchButton1 = new Button("Switch to Frame 2");
+        switchButton2 = new Button("Switch to Frame 1");
+
+        switchButton1.addActionListener(this);
+        switchButton2.addActionListener(this);
+
+        frame1.setSize(300, 200);
+        frame2.setSize(300, 200);
+        frame1.setLayout(new FlowLayout());
+        frame2.setLayout(new FlowLayout());
+
+        frame1.add(new Label("This is Frame 1"));
+        frame2.add(new Label("This is Frame 2"));
+        frame1.add(switchButton1);
+        frame2.add(switchButton2);
+
+        frame1.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent we) {
+                frame1.dispose();
+                frame2.dispose();
+            }
+        });
+        
+        frame2.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent we) {
+                frame1.dispose();
+                frame2.dispose();
+            }
+        });
+        frame1.setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == switchButton1) {
+            frame1.setVisible(false);
+            frame2.setVisible(true);
+        } else if (ae.getSource() == switchButton2) {
+            frame2.setVisible(false);
+            frame1.setVisible(true);
+        }
+    }
+
+    public static void main(String[] args) {
+        new pro9();
+    }
+} 
+</code></pre>
+<h3>Output</h3>
+<pre class="code" style="padding: 2%;">
+    <img src="j9.png">
+</pre>
+            <!-- previous next buttons -->
+            <!-- <div class="toggle-page-btns">
+                <a href="plsql2.html" class="button">Next &rarr;</a>
+            </div> -->
+        </div>
+    </div>
+    <footer>
+        Copyright &copy; 2023 Squirrel<span class="primary-color">Codes</span>
+    </footer>
+</body>
+
+</html>

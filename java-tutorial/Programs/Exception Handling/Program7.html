@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Squirrel-Codes</title>
+    <link rel="stylesheet" href="../../../index.css">
+    <link rel="shortcut icon" href="../../../images/logo-dark.svg" type="image/x-icon">
+</head>
+
+<body>
+
+    <header class="sticky">
+        <a href="index.html" class="webname">
+            <img src="../../../images/logo-dark.svg" alt="">
+            Squirrel<span class="primary-color">Codes</span>
+        </a>
+        <nav>
+            <a href="../../../index.html">Home</a>
+            <a href="../dbms-tutorial/dbms1.html">DBMS</a>
+            <a href="../../plsql-tutorial/plsql1.html" class="active">PL/SQL</a>
+            <a href="../java.html">Java</a>
+            <a href="../../../about.html">About</a>
+        </nav>
+    </header>
+
+    <h2 class="center tutorial">Java Tutorial</h2>
+    <hr>
+    <div class="content-box">
+        <div class="sidebar">
+            <a class="primary-color">Programs</a>
+            <a href="../../../Programs/Program1.html" class="sidelinks sideactive">Program 1</a>
+            <a href="./Quesrions/Array2D.html" class="sidelinks">Program 2</a>
+            <a href="./Quesrions/Applets.html" class="sidelinks">Program 3</a>
+            <a href="./Quesrions/Data-Conversion.html" class="sidelinks">Program 4</a>
+            <a href="./Quesrions/Delegation-event-model.html" class="sidelinks">Delegation Event Model</a>
+            <a href="./Quesrions/Exception-Handling.html" class="sidelinks">Exception handling</a>
+            <a href="./Quesrions/Function.html" class="sidelinks">Functions</a>
+            <a href="./Quesrions/AWT.html" class="sidelinks">AWT</a>
+            <a href="./Quesrions/Inheritance.html" class="sidelinks">Inheritance</a>
+            <a href="./Quesrions/Input-Output.html" class="sidelinks">Input/Output</a>
+            <a href="./Quesrions/Interfaces.html" class="sidelinks">Interface</a>
+            <a href="./Quesrions/JDBC.html" class="sidelinks">JDBC</a>
+            <a href="./Quesrions/Multithreading.html" class="sidelinks">Multithreading</a>
+            <a href="./Quesrions/OOPs.html" class="sidelinks">OOPs</a>
+            <a href="./Quesrions/Packages.html" class="sidelinks">Packages</a>
+            <a href="./Quesrions/Array1D.html" class="sidelinks">1D Arrays</a>
+            <a href="./Quesrions/String.html" class="sidelinks">Strings</a>
+        </div>
+        <div class="content">
+            <!-- topic name -->
+            <h3 class="main">Exception Handling</h3>
+
+            <!-- Programs list -->
+            <p>7. Write a Java program to create a method that takes a string as input and throws an exception if the string does not contain vowels.</p>
+            <h3>Code</h3>
+            <pre class="code"><code class="language-java">
+    import java.util.HashSet;
+
+    public class VowelCheck {
+    public static void main(String[] args) {
+        try {
+            String inputString = "Hll Wrd"; // Replace with the actual string
+            checkForVowels(inputString);
+            System.out.println("String contains vowels.");
+        } catch (NoVowelsException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+                                        
+    private static void checkForVowels(String input) throws NoVowelsException {
+        HashSet vowels = new HashSet<>();
+        vowels.add('a');
+        vowels.add('e');
+        vowels.add('i');
+        vowels.add('o');
+        vowels.add('u');
+                                        
+        for (char ch : input.toLowerCase().toCharArray()) {
+            if (vowels.contains(ch)) {
+                return; // Found a vowel, no need to continue
+            }
+        }
+                                        
+        throw new NoVowelsException("No vowels found in the string.");
+    }
+}
+                                        
+class NoVowelsException extends Exception {
+    public NoVowelsException(String message) {
+        super(message);
+    }
+} 
+</code></pre>
+<h3>Output</h3>
+<pre class="code" style="padding: 2%;">
+    String contains vowels.
+</pre>
+            <!-- previous next buttons -->
+            <!-- <div class="toggle-page-btns">
+                <a href="plsql2.html" class="button">Next &rarr;</a>
+            </div> -->
+        </div>
+    </div>
+    <footer>
+        Copyright &copy; 2023 Squirrel<span class="primary-color">Codes</span>
+    </footer>
+</body>
+
+</html>

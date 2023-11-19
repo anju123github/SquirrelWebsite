@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Squirrel-Codes</title>
+    <link rel="stylesheet" href="../../../index.css">
+    <link rel="shortcut icon" href="../../../images/logo-dark.svg" type="image/x-icon">
+</head>
+
+<body>
+
+    <header class="sticky">
+        <a href="index.html" class="webname">
+            <img src="../../../images/logo-dark.svg" alt="">
+            Squirrel<span class="primary-color">Codes</span>
+        </a>
+        <nav>
+            <a href="../../../index.html">Home</a>
+            <a href="../dbms-tutorial/dbms1.html">DBMS</a>
+            <a href="../../plsql-tutorial/plsql1.html" class="active">PL/SQL</a>
+            <a href="../java.html">Java</a>
+            <a href="../../../about.html">About</a>
+        </nav>
+    </header>
+
+    <h2 class="center tutorial">Java Tutorial</h2>
+    <hr>
+    <div class="content-box">
+        <div class="sidebar">
+            <a class="primary-color">Programs</a>
+            <a href="../../../Programs/Program1.html" class="sidelinks sideactive">Program 1</a>
+            <a href="./Quesrions/Array2D.html" class="sidelinks">Program 2</a>
+            <a href="./Quesrions/Applets.html" class="sidelinks">Program 3</a>
+            <a href="./Quesrions/Data-Conversion.html" class="sidelinks">Program 4</a>
+            <a href="./Quesrions/Delegation-event-model.html" class="sidelinks">Delegation Event Model</a>
+            <a href="./Quesrions/Exception-Handling.html" class="sidelinks">Exception handling</a>
+            <a href="./Quesrions/Function.html" class="sidelinks">Functions</a>
+            <a href="./Quesrions/AWT.html" class="sidelinks">AWT</a>
+            <a href="./Quesrions/Inheritance.html" class="sidelinks">Inheritance</a>
+            <a href="./Quesrions/Input-Output.html" class="sidelinks">Input/Output</a>
+            <a href="./Quesrions/Interfaces.html" class="sidelinks">Interface</a>
+            <a href="./Quesrions/JDBC.html" class="sidelinks">JDBC</a>
+            <a href="./Quesrions/Multithreading.html" class="sidelinks">Multithreading</a>
+            <a href="./Quesrions/OOPs.html" class="sidelinks">OOPs</a>
+            <a href="./Quesrions/Packages.html" class="sidelinks">Packages</a>
+            <a href="./Quesrions/Array1D.html" class="sidelinks">1D Arrays</a>
+            <a href="./Quesrions/String.html" class="sidelinks">Strings</a>
+        </div>
+        <div class="content">
+            <!-- topic name -->
+            <h3 class="main">OOPs</h3>
+
+            <!-- Programs list -->
+            <p>29. Write a Java program to create a class called Employee with private instance variables employee_id, employee_name, and employee_salary. Provide public getter and setter methods to access and modify the id and name variables, but provide a getter method for the salary variable that returns a formatted string.</p>
+            <h3>Code</h3>
+            <pre class="code"><code class="language-java">
+                
+
+public class Employee {
+    private int employee_id;
+    private String employee_name;
+    private double employee_salary;
+
+    // Getter and setter methods for employee_id
+    public int getEmployeeId() {
+        return employee_id;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employee_id = employeeId;
+    }
+
+    // Getter and setter methods for employee_name
+    public String getEmployeeName() {
+        return employee_name;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employee_name = employeeName;
+    }
+
+    // Getter method for formatted employee_salary
+    public String getFormattedSalary() {
+        return String.format("$%,.2f", employee_salary);
+    }
+
+    // Setter method for employee_salary
+    public void setEmployeeSalary(double employeeSalary) {
+        this.employee_salary = employeeSalary;
+    }
+
+    public static void main(String[] args) {
+        // Create an instance of the Employee class
+        Employee employee = new Employee();
+
+        // Set the values using setter methods
+        employee.setEmployeeId(101);
+        employee.setEmployeeName("John Doe");
+        employee.setEmployeeSalary(50000.75);
+
+        // Display the values using getter methods
+        System.out.println("Employee ID: " + employee.getEmployeeId());
+        System.out.println("Employee Name: " + employee.getEmployeeName());
+        System.out.println("Employee Salary: " + employee.getFormattedSalary());
+    }
+}
+</code></pre>
+<h3>Output</h3>
+<pre class="code" style="padding: 2%;">
+Employee ID: 1
+Employee Name: John Doe
+Employee Salary: $50000.50
+
+Updated Employee Information:
+Employee ID: 2
+Employee Name: Jane Smith
+Employee Salary: $60000.75
+</pre>
+            <!-- previous next buttons -->
+            <!-- <div class="toggle-page-btns">
+                <a href="plsql2.html" class="button">Next &rarr;</a>
+            </div> -->
+        </div>
+    </div>
+    <footer>
+        Copyright &copy; 2023 Squirrel<span class="primary-color">Codes</span>
+    </footer>
+</body>
+
+</html>
